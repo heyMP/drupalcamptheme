@@ -1,0 +1,6 @@
+.node-schedule-item {
+  // Make sure that the next field doesn't wrap around the image
+  .field-name-body + * {
+    clear: both;
+  }
+}

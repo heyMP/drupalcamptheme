@@ -1,0 +1,23 @@
+.footer-links {
+  text-align: center;
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: inline-block;
+      text-align: center;
+
+      a {
+        @extend .footer-button;
+        @include adjust-font-size-to(14px);
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.huge-action-buttons-wrapper {
+  @include breakpoint($huge-action-buttons--two-columns) {
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-align(stretch);
+    display: flex;
+  }
+}
+
+.huge-action-buttons {
+  position: relative;
+  display: block;
+  @include breakpoint($huge-action-buttons--two-columns) {
+    @include display-flex;
+    @include flex-direction(row);
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .button {
+    @extend .pathway-gothic;
+    padding: .5em 0;
+    text-decoration: none;
+    display: block;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    line-height: 100%;
+    position: relative;
+    margin-bottom: 0;
+    @include breakpoint($huge-action-buttons--two-columns) {
+      font-size: 58px;
+      width: 100%;
+
+      .no-flexbox & {
+        float: left;
+      }
+    }
+
+    span {
+      display: block;
+      text-transform: none;
+      font-size: .6em;
+      color: $royal-blue;
+      line-height: 100%;
+      @include breakpoint($huge-action-buttons--two-columns) {
+        font-size: .4em;
+      }
+    }
+  }
+
+  .primary {
+    background: $pittsburgh-gold;
+
+    &:hover {
+      background: darken($pittsburgh-gold, 5);
+    }
+  }
+
+  .secondary {
+    background: $royal-blue;
+    color: $pittsburgh-gold;
+
+    &:hover {
+      background: darken($royal-blue, 5);
+    }
+
+    span {
+      color: white;
+    }
+  }
+}

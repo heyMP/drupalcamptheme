@@ -1,0 +1,83 @@
+.button,
+%button {
+  color: $royal-blue;
+  display: inline-block;
+
+  &:hover {
+    color: $orange;
+  }
+}
+
+.footer-button,
+%footer-button {
+  @include transition(all .5s ease);
+  color: $pittsburgh-gold;
+
+  &:hover {
+    color: lighten($pittsburgh-gold, 20);
+  }
+}
+
+.button--standard {
+  @include button-style($orange, white, $red);
+  @include transform(all 1s ease);
+  @extend .ubuntu;
+}
+
+.button--call-to-action {
+  @include button-style(white, $orange, $pittsburgh-gold);
+  margin-bottom: .5em;
+  @extend .ubuntu;
+}
+
+.button--secondary {
+  @include button-style($orange, white);
+  text-transform: none;
+  @extend .ubuntu;
+}
+
+.button--tertiary {
+  @include button-style(white, $grayish, $pittsburgh-gold);
+  margin-bottom: .5em;
+  @extend .ubuntu;
+}
+
+.button--tertiary-selected {
+  @include button-style(white, $orange, $light-brown);
+  text-transform: none;
+  @extend .ubuntu;
+}
+
+.button--list-menu {
+  text-decoration: none;
+  @extend .ubuntu;
+  text-transform: uppercase;
+  padding: 1em 1em;
+  text-align: center;
+  display: block;
+}
+
+.button--more {
+  background: $brown;
+  color: white;
+  padding: .5em 1em;
+  text-decoration: none;
+  @include border-radius(5px);
+
+  &:hover {
+    color: $pittsburgh-gold;
+  }
+}
+
+.button--highlight,
+%button--highlight {
+  @extend .button;
+  @extend .pathway-gothic;
+  color: white;
+  text-decoration: none;
+  border-left: 5px solid white;
+  font-size: 28px;
+  line-height: 100%;
+  padding-left: .5em;
+  cursor: pointer;
+}

@@ -1,0 +1,512 @@
+/**
+ * @file
+ * Generic theme-independent base styles.
+ */
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+/* Suggestion list */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic|Pathway+Gothic+One);
+#autocomplete {
+  border: 1px solid;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+}
+
+#autocomplete ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+#autocomplete li {
+  background: #fff;
+  color: #000;
+  cursor: default;
+  white-space: pre;
+  zoom: 1;
+  /* IE7 */
+}
+
+/* Animated throbber */
+html.js input.form-autocomplete {
+  background-image: url(../../misc/throbber.gif);
+  background-position: 100% 2px;
+  /* LTR */
+  background-repeat: no-repeat;
+}
+
+html.js input.throbbing {
+  background-position: 100% -18px;
+  /* LTR */
+}
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+html.js fieldset.collapsed {
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  height: 1em;
+}
+
+html.js fieldset.collapsed .fieldset-wrapper {
+  display: none;
+}
+
+fieldset.collapsible {
+  position: relative;
+}
+
+fieldset.collapsible .fieldset-legend {
+  display: block;
+}
+
+/**
+ * Resizable textareas.
+ *
+ * @see textarea.js
+ */
+.form-textarea-wrapper textarea {
+  display: block;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.resizable-textarea .grippie {
+  background: #eeeeee url(../../misc/grippie.png) no-repeat center 2px;
+  border: 1px solid #ddd;
+  border-top-width: 0;
+  cursor: s-resize;
+  height: 9px;
+  overflow: hidden;
+}
+
+/**
+ * TableDrag behavior.
+ *
+ * @see tabledrag.js
+ */
+body.drag {
+  cursor: move;
+}
+
+div.indentation {
+  float: left;
+  /* LTR */
+  height: 1.7em;
+  margin: -0.4em 0.2em -0.4em -0.4em;
+  /* LTR */
+  padding: 0.42em 0 0.42em 0.6em;
+  /* LTR */
+  width: 20px;
+}
+
+div.tree-child {
+  background: url(../../misc/tree.png) no-repeat 11px center;
+  /* LTR */
+}
+
+div.tree-child-last {
+  background: url(../../misc/tree-bottom.png) no-repeat 11px center;
+  /* LTR */
+}
+
+div.tree-child-horizontal {
+  background: url(../../misc/tree.png) no-repeat -11px center;
+}
+
+.tabledrag-toggle-weight-wrapper {
+  text-align: right;
+  /* LTR */
+}
+
+/**
+ * TableHeader behavior.
+ *
+ * @see tableheader.js
+ */
+table.sticky-header {
+  background-color: #fff;
+  margin-top: 0;
+}
+
+/**
+ * Progress behavior.
+ *
+ * @see progress.js
+ */
+/* Bar */
+.progress .bar {
+  background-color: #fff;
+  border: 1px solid;
+}
+
+.progress .filled {
+  background-color: #000;
+  height: 1.5em;
+  width: 5px;
+}
+
+.progress .percentage {
+  float: right;
+  /* LTR */
+}
+
+/* Throbber */
+.ajax-progress {
+  display: inline-block;
+}
+
+.ajax-progress .throbber {
+  background: transparent url(../../misc/throbber.gif) no-repeat 0px -18px;
+  float: left;
+  /* LTR */
+  height: 15px;
+  margin: 2px;
+  width: 15px;
+}
+
+.ajax-progress .message {
+  padding-left: 20px;
+}
+
+tr .ajax-progress .throbber {
+  margin: 0 2px;
+}
+
+.ajax-progress-bar {
+  width: 16em;
+}
+
+/**
+ * Inline items.
+ */
+.container-inline div,
+.container-inline label {
+  display: inline;
+}
+
+/* Fieldset contents always need to be rendered as block. */
+.container-inline .fieldset-wrapper {
+  display: block;
+}
+
+/**
+ * Prevent text wrapping.
+ */
+.nowrap {
+  white-space: nowrap;
+}
+
+/**
+ * For anything you want to hide on page load when JS is enabled, so
+ * that you can use the JS to control visibility and avoid flicker.
+ */
+html.js .js-hide {
+  display: none;
+}
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be a collapsible fieldset that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.element-hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+}
+
+/**
+ * The .element-focusable class extends the .element-invisible class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.element-invisible.element-focusable:active,
+.element-invisible.element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+}
+
+/**
+ * Markup free clearing.
+ *
+ * @see http://perishablepress.com/press/2009/12/06/new-clearfix-hack
+ */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* IE6 */
+* html .clearfix {
+  height: 1%;
+}
+
+/* IE7 */
+*:first-child + html .clearfix {
+  min-height: 1%;
+}
+
+/**
+ * @param $selector Name of the psuedo selector
+ */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.wrapper {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+.ubuntu, .ubuntu--italic, .ubuntu--bold, .button--standard, .button--call-to-action, .button--secondary, .button--tertiary, .button--tertiary-selected, .button--list-menu {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+.ubuntu--italic {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu--bold {
+  font-weight: 700;
+}
+
+.pathway-gothic, .button--highlight {
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.625em;
+}
+
+.button, .button--highlight {
+  color: #00335b;
+  display: inline-block;
+}
+.button:hover, .button--highlight:hover {
+  color: #ffa022;
+}
+
+.footer-button {
+  transition: all 0.5s ease;
+  color: #f4b830;
+}
+.footer-button:hover {
+  color: #f9d991;
+}
+
+.button--standard {
+  background: white;
+  border: 1px solid #e6e6e6;
+  padding: .5em 1em;
+  color: #ffa022 !important;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  padding-right: 2em;
+  -ms-transform: all 1s ease;
+  -webkit-transform: all 1s ease;
+  transform: all 1s ease;
+}
+.button--standard:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-left-color: #b71f21;
+  border-width: 0.5em 0 0.5em 0.8em;
+  position: absolute;
+  right: .5em;
+  top: 50%;
+  margin-top: -.5em;
+}
+.button--standard:hover {
+  background: white;
+}
+
+.button--call-to-action {
+  background: #ffa022;
+  border: 1px solid #ee8800;
+  padding: .5em 1em;
+  color: white !important;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  padding-right: 2em;
+  margin-bottom: .5em;
+}
+.button--call-to-action:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-left-color: #f4b830;
+  border-width: 0.5em 0 0.5em 0.8em;
+  position: absolute;
+  right: .5em;
+  top: 50%;
+  margin-top: -.5em;
+}
+.button--call-to-action:hover {
+  background: #ffa731;
+}
+
+.button--secondary {
+  background: white;
+  border: 1px solid #e6e6e6;
+  padding: .5em 1em;
+  color: #ffa022 !important;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  text-transform: none;
+}
+.button--secondary:hover {
+  background: white;
+}
+
+.button--tertiary {
+  background: #60646e;
+  border: 1px solid #484b53;
+  padding: .5em 1em;
+  color: white !important;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  padding-right: 2em;
+  margin-bottom: .5em;
+}
+.button--tertiary:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-left-color: #f4b830;
+  border-width: 0.5em 0 0.5em 0.8em;
+  position: absolute;
+  right: .5em;
+  top: 50%;
+  margin-top: -.5em;
+}
+.button--tertiary:hover {
+  background: #676b76;
+}
+
+.button--tertiary-selected {
+  background: #ffa022;
+  border: 1px solid #ee8800;
+  padding: .5em 1em;
+  color: white !important;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  padding-right: 2em;
+  text-transform: none;
+}
+.button--tertiary-selected:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-left-color: #5b4e42;
+  border-width: 0.5em 0 0.5em 0.8em;
+  position: absolute;
+  right: .5em;
+  top: 50%;
+  margin-top: -.5em;
+}
+.button--tertiary-selected:hover {
+  background: #ffa731;
+}
+
+.button--list-menu {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1em 1em;
+  text-align: center;
+  display: block;
+}
+
+.button--more {
+  background: #2d241c;
+  color: white;
+  padding: .5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.button--more:hover {
+  color: #f4b830;
+}
+
+.button--highlight {
+  color: white;
+  text-decoration: none;
+  border-left: 5px solid white;
+  font-size: 28px;
+  line-height: 100%;
+  padding-left: .5em;
+  cursor: pointer;
+}

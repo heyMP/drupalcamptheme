@@ -1,0 +1,27 @@
+/**
+ * Nav
+ */
+
+.nav {
+  @include breakpoint(0 $primary-nav--inline) {
+    box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.88);
+  }
+}
+
+.nav__sitename {
+  @include span(6);
+}
+
+.nav__menu {
+  @include span(6 last);
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}

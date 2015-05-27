@@ -1,0 +1,41 @@
+#main {
+  background: #EAEAEA;
+  padding: 0;
+  margin: 0;
+  display: block;
+  overflow: hidden;
+  padding: $main-content--padding-top-bottom;
+  @include main-content-padding();
+  position: relative;
+  padding-bottom: 8%;
+
+  // Trees and water tower
+  // .backgroundsize &:after {
+  //   content: '';
+  //   display: block;
+  //   width: 19%;
+  //   height: 0;
+  //   padding-top: 13.9%;
+  //   background: transparent image-url('footer-trees.jpg') no-repeat bottom left;
+  //   background-size: cover;
+  //   bottom: -2px;
+  //   left: 80%;
+  //   margin-top: 1em;
+  //   position: absolute;
+  // }
+
+  .wrapper {
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    .front & {
+      max-width: none;
+    }
+  }
+
+  .front & {
+    @include breakpoint($venue--two-columns) {
+      padding-bottom: 0;
+    }
+  }
+}

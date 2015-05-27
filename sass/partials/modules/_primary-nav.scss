@@ -1,0 +1,139 @@
+#menu {
+  background: transparent;
+  display: block;
+  position: relative;
+
+  &:after {
+    @include transition-duration(.5s);
+    @extend .pathway-gothic;
+    content: 'menu';
+    display: block;
+    @extend .button--list-menu;
+    color: white;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    background-color: $blue;
+    padding: .5em 1em;
+    font-size: 18px;
+    @include breakpoint($primary-nav--inline) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .menu-block-wrapper {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    background: $blue;
+    @include breakpoint(0 $primary-nav--inline) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1000;
+      overflow-y: scroll;
+    }
+
+    &:before {
+      @include breakpoint(0 $primary-nav--inline) {
+        content: 'X';
+        display: block;
+        text-align: right;
+        color: white;
+        padding: 1em;
+        padding-bottom: 0;
+        font-size: 1.8em;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      @include breakpoint($primary-nav--inline) {
+        display: inline-block;
+      }
+
+      a {
+        @extend .button--list-menu;
+        @extend .pathway-gothic;
+        @include adjust-font-size-to(26px);
+        text-transform: none;
+        color: white;
+        background: $blue;
+        line-height: inherit;
+        text-align: left;
+        @include breakpoint($primary-nav--inline) {
+          padding: .3em .5em ;
+          @include adjust-font-size-to(26px);
+          // Weird line height issue, makes it look like it's not centered
+          // line-height: 105%;
+        }
+      }
+      &.hover > a {
+        background: $light-blue;
+        color: #FFF86E;
+      }
+    }
+
+    @include breakpoint(0 $primary-nav--inline) {
+      ul ul a {
+        background: #D7D9DA;
+        color: black;
+        font-size: 1.1rem;
+        @include breakpoint(0 $primary-nav--inline) {
+          padding-left: 2em;
+        }
+
+        &:hover {
+          background: #D7D9DA * .9;
+          color: $blue;
+        }
+      }
+    }
+
+  // Style the dropdown links
+  @include breakpoint($primary-nav--inline) {
+    ul li {
+      ul {
+        position: absolute;
+        display: none;
+        z-index: 10;
+        width: 160px;
+        margin-top: -1px;
+
+        li {
+          display: block;
+
+          a {
+            background: $light-blue;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.88);
+          }
+
+          &.hover a {
+            color: #FFF86E;
+          }
+        }
+      }
+      &.hover ul {
+        display: block;
+      }
+    }
+  }
+  }
+}

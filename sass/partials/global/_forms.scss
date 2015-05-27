@@ -1,0 +1,11 @@
+%inputs {
+  @extend .ubuntu;
+  background: tint($brown, 95);
+  @include adjust-font-size-to(18px);
+  padding: .3em .5em;
+  width: 100%;
+
+  &:focus {
+
+  }
+}

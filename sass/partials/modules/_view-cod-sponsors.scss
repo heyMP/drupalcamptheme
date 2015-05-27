@@ -1,0 +1,74 @@
+.view-cod-sponsors {
+  background: white;
+  display: block;
+  overflow: hidden;
+  @include main-content-padding();
+
+  .title {
+    border-bottom: 2px solid;
+    text-align: center;
+    clear: both;
+  }
+
+  .logos {
+    clear: both;
+    max-width: $container-max-width;
+    margin: auto;
+  }
+
+  .logo {
+    width: 80%;
+    height: 10em;
+    // Progressively adding intrinsic ratio sizing with 'vw' units
+    height: 50vw;
+    max-height: 10em;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    @include rhythm();
+    @include breakpoint($view-cod-sponsors--two-column) {
+      width: 25%;
+      float: left;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: auto;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+      margin: auto;
+    }
+  }
+
+  .Platinum .logo {
+    @include breakpoint($view-cod-sponsors--two-column) {
+      width: 50%;
+    }
+  }
+
+  .Gold .logo {
+    @include breakpoint($view-cod-sponsors--two-column) {
+      width: 33.33%;
+      max-height: 8em;
+    }
+  }
+
+  .Silver .logo {
+    @include breakpoint($view-cod-sponsors--two-column) {
+      width: 25%;
+      max-height: 6em;
+    }
+  }
+}
+
+#footer #block-views-cod-sponsors-block {
+  // Remove the top margin in the footer.
+  margin: 0;
+}

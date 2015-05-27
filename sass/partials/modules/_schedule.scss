@@ -1,0 +1,51 @@
+.view-schedule {
+  .schedule__item {
+    background: $royal-blue;
+    min-height: 6em;
+    padding: 1em;
+    display: block;
+    overflow: hidden;
+    margin: 1em 0;
+    color: white;
+
+    .title {
+      margin-top: 0;
+      color: $pittsburgh-gold;
+      font-size: 1.6em;
+    }
+
+    & .event-name {
+      color: white;
+      font-size: 1.3em;
+      margin: 0;
+
+      // Hack! it's being overrun by #main a
+      // that shouldn't be happening.
+      a {
+        color: white;
+        margin: 0;
+      }
+    }
+
+    .speakers {
+      color: rgba(255, 255, 255, 0.80);
+    }
+  }
+
+  .view-grouping {
+    margin-bottom: 4em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .view-grouping-header {
+    font-size: 1.4em;
+  }
+
+  .schedule__event {
+    margin: 2em 0;
+    color: rgba(255, 255, 255, 0.80);
+  }
+}

@@ -1,0 +1,142 @@
+.site-name {
+  @include transition-property(all);
+  @include transition-duration(.8s);
+  padding-top: 1em;
+  padding-bottom: 1em;
+  z-index: 0;
+  position: relative;
+  max-width: 960px;
+  margin: auto;
+  @include breakpoint($sitname--logo-name-inline) {
+    @include padding-leader(2);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: rgba(45, 171, 255, 0.62);
+    top:0;
+    left:0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__logo a {
+    @include transition-property(all);
+    @include transition-duration(.8s);
+    width: 80%;
+    margin: auto;
+    max-width: 400px;
+    height: 0;
+    position: relative;
+    z-index: 10px;
+    background: inline-image("drupalcamppa_logo.svg") no-repeat center center;
+    background-size: 100%;
+    padding-top: 55%;
+    display: block;
+    overflow: hidden;
+    @include breakpoint($sitename--mobile-init) {
+      width: 55%;
+    }
+    @include breakpoint($sitname--logo-name-inline) {
+      float:left;
+      width: 30%;
+      margin: -10% 1em 0 0;
+      padding-top: 30%;
+    }
+    @include breakpoint($sitname--logo-name-inline-stop) {
+      width: 280px;
+      margin-top: -5em;
+      padding-top: 17em;
+      @include translate(-1em, 0);
+    }
+
+    .no-svg & {
+      background-image: image-url("drupalcamppa_logo.png");
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    @extend .ubuntu--bold;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    line-height: 80%;
+    @include breakpoint($sitename--mobile-init) {
+      font-size: 8vw;
+    }
+    @include breakpoint($sitname--logo-name-inline) {
+      text-align: left;
+      font-size: 6.5vw;
+
+    }
+    @include breakpoint($sitname--logo-name-inline + 10em) {
+      font-size: 30px;
+      font-size: 6.5vw;
+    }
+    @include breakpoint($sitname--logo-name-inline + 20em) {
+      font-size: 44px;
+      font-size: 6.5vw;
+    }
+    @include breakpoint($sitname--logo-name-inline-stop) {
+      font-size: 56px;
+    }
+
+    a {
+      color: white;
+    }
+
+    span {
+      display: block;
+      color: $pittsburgh-gold;
+      @include breakpoint($sitename--mobile-init) {
+        font-size: 0.7em;
+        display: block;
+      }
+    }
+  }
+
+  &__dates {
+    @extend .pathway-gothic;
+    font-size: 16px;
+    font-size: 6vw;
+    line-height: 100%;
+    text-align: center;
+    margin-top: 2%;
+    color: $brown;
+    @include breakpoint($sitname--logo-name-inline) {
+      text-align: left;
+      font-size: 24px;
+      font-size: 3.5vw;
+    }
+    @include breakpoint($sitname--logo-name-inline-stop) {
+      font-size: 26px;
+      @include leader(.4);
+      @include trailer(.4);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+////////////////////////
+// Extendables Partials
+//
+// All of your extendable classes, ids, and placeholder extendables
+//   should go in this file.
+////////////////////////
+
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.wrapper {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}

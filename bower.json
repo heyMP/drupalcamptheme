@@ -1,0 +1,29 @@
+{
+  "name": "heyMP",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eq.js": "~1.4.1",
+    "borealis": "~1.0.1",
+    "svg4everybody": "~1.0.0",
+    "object-fit": "~0.4.1"
+  },
+  "devDependencies": {
+    "north": "~0.2.0",
+    "Cortana": "~1.2.7"
+  },
+  "overrides": {
+    "jquery": {
+      "ignore": "true"
+    },
+    "svg4everybody": {
+      "main": "svg4everybody.min.js"
+    }
+  }
+}

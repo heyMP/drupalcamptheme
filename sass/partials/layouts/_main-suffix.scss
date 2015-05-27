@@ -1,0 +1,13 @@
+#main-suffix {
+  .block {
+    background: white;
+    display: block;
+    overflow: hidden;
+    @include main-content-padding();
+
+    header h2 {
+      padding-top: 0;
+      border-bottom: 3px solid $royal-blue;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+%field-image,
+.field-name-field-image {
+  text-align: center;
+    @include breakpoint(40em) {
+      float: left;
+      margin: 1em;
+      margin-bottom: .5em;
+    }
+
+  img {
+    border: 2px solid #F0F0F0;
+  }
+}

@@ -1,0 +1,26 @@
+#menu {
+  .menu-block-wrapper {
+    @include breakpoint(0 $primary-nav--inline) {
+      @include translateY(-100%);
+      @include transition-property(all);
+      @include transition-duration(.4s);
+    }
+  }
+
+  &.open .menu-block-wrapper {
+    @include translateY(0);
+    @include breakpoint(0 $primary-nav--inline) {
+      box-shadow: 0 5px 23px -5px rgba(0, 0, 0, 0.88);
+    }
+  }
+
+  &.open:after {
+    @include transition-property(color, background-color);
+    color: $pittsburgh-gold;
+  }
+}
+
+// Make sure that only the menu is scrolling and not the body.
+body.menu-open {
+  overflow: hidden;
+}

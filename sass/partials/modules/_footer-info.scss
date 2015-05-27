@@ -1,0 +1,15 @@
+.footer-info {
+  @include child-margin-fixer(p);
+  text-align: center;
+
+  .backgroundsize & .twitter {
+    height: 0;
+    padding-top: 75px;
+    width: 75px;
+    background: image-url('Icons/SVG/twitter3white.svg') 0 0;
+    background-size: 100% 100%;
+    display: block;
+    overflow: hidden;
+    margin: auto;
+  }
+}

@@ -1,0 +1,36 @@
+////////////////////////
+// Typography
+//
+// All of the typography variables and definitions
+// should go here.
+////////////////////////
+
+// Imports
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic|Pathway+Gothic+One);
+
+// Font Declarations
+.ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+.ubuntu--italic {
+  @extend .ubuntu;
+  font-weight: 400;
+  font-style: italic;
+}
+.ubuntu--bold {
+  @extend .ubuntu;
+  font-weight: 700;
+}
+
+.pathway-gothic {
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+///////////////////////
+// Vertical Rhythm
+// all spacing calculations should be based off of these variables.
+//////////////////////
+$base-font-size: 16px;
+$base-line-height: 26px;
+@include establish-baseline();

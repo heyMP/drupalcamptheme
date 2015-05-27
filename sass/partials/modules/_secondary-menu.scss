@@ -1,0 +1,33 @@
+.secondary-menu {
+  @include clearfix;
+
+  header h2 {
+    float: left;
+    font-size: 1em;
+    margin: 0.2em;
+    margin-right: .8em;
+
+    a {
+      @extend .button--tertiary;
+      margin-bottom: 0;
+    }
+  }
+
+  ul li.leaf {
+    list-style: none;
+  }
+
+  ul.menu {
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin: 0;
+    }
+
+    a {
+      @extend .button--tertiary;
+    }
+  }
+}

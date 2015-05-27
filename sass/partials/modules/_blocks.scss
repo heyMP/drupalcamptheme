@@ -1,0 +1,6 @@
+.aside-block,
+%aside-block {
+  @include main-content-padding;
+  background: $grayish;
+  width: 100%;
+}

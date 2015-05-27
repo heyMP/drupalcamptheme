@@ -1,0 +1,16 @@
+.front {
+  #main {
+    color: white;
+    background: $royal-blue;
+
+    h1,h2,h3,h4,h5 {
+      color: inherit;
+    }
+  }
+
+  #footer {
+    &:before {
+      @include triangle($royal-blue, 2em, 5em, 180);
+    }
+  }
+}

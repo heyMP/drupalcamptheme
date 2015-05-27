@@ -1,0 +1,37 @@
+#footer {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  clear: both;
+  background: $blue;
+
+  &:before {
+    content: '';
+    display: block;
+    @include triangle(#EAEAEA, 2em, 5em, 180);
+    position: absolute;
+    bottom: -1.9em;
+    top: -2px;
+    right: 25%;
+    z-index: 100;
+  }
+
+  .block {
+    @include rhythm(.5);
+    display: block;
+    overflow: hidden;
+    color: white;
+
+    header {
+      h2 {
+        text-align: center;
+        @extend .pathway-gothic;
+        color: white;
+      }
+    }
+
+    a {
+      @extend .footer-button;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+#header {
+  padding: 3.5em 0 2em;
+  background: black image-url('bg-dcamppa-mobile.jpg') no-repeat center -16rem fixed;
+  background-size: cover;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  @include breakpoint($sitname--logo-name-inline) {
+    background-position: center -18em;
+  }
+  @include breakpoint($sitname--logo-name-inline-stop) {
+    background-position: center -16em;
+    // Method for trying to center in on a focal point
+    background-position: center -30vw;
+    background-image: image-url('bg-dcamppa.jpg');
+  }
+}
