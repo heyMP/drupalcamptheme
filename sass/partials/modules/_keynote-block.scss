@@ -37,5 +37,12 @@
       font-weight: inherit;
     }
   }
+
+  // Modifiers
+  &.m--has-image {
+    .announcement__titlegroup {
+      border: none;
+    }
+  }
 }
 

@@ -134,9 +134,13 @@ function drupalcamppa_aurora_preprocess_entity(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function drupalcamppa_aurora_preprocess_node(&$vars, $hook) {
   $node = $vars['node'];
+
+  // Add a 'has image' modifier if there is an image displayed
+  if ($vars['field_announcement_image']) {
+    $vars['classes_array'][] = 'm--has-image';
+  }
 }
 // */
 

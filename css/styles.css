@@ -1164,6 +1164,9 @@ input#edit-submit {
   color: inherit;
   font-weight: inherit;
 }
+.announcement.m--has-image .announcement__titlegroup {
+  border: none;
+}
 
 .node-news .field-name-field-news-image {
   text-align: center;
