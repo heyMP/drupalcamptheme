@@ -3,24 +3,31 @@
   overflow: hidden;
   color: #C9C9C9;
 
+  & + & {
+    margin-top: 1em;
+  }
+
+  &__image {
+    display: block;
+    overflow: hidden;
+    padding-right: 1em;
+    float: left;
+
+    img {
+      max-width: 150px;
+      display: block;
+    }
+  }
+
   &__day {
     @extend .ubuntu;
     margin-bottom: .5em;
     font-style: italic;
   }
 
-  &__image {
-    width: 100%;
-    padding-right: 1em;
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-  }
-
   &__titlegroup {
     @extend %button--highlight;
+    display: block;
 
     * {
       margin: 0;

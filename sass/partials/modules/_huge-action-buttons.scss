@@ -32,13 +32,18 @@
     line-height: 100%;
     position: relative;
     margin-bottom: 0;
+    width: 100%;
     @include breakpoint($huge-action-buttons--two-columns) {
-      font-size: 58px;
-      width: 100%;
-
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       .no-flexbox & {
         float: left;
       }
+    }
+    @include breakpoint($huge-action-buttons--two-columns + 10em) {
+      font-size: 58px;
     }
 
     span {

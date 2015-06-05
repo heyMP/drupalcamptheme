@@ -1048,20 +1048,39 @@ input#edit-submit {
   line-height: 100%;
   position: relative;
   margin-bottom: 0;
+  width: 100%;
 }
 @media (min-width: 40em) {
   .huge-action-buttons .button, .huge-action-buttons .button--highlight,
   .huge-action-buttons .announcement__titlegroup,
   .huge-action-buttons .node-news.node-teaser h2 a,
   .node-news.node-teaser h2 .huge-action-buttons a {
-    font-size: 58px;
-    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .no-flexbox .huge-action-buttons .button, .no-flexbox .huge-action-buttons .button--highlight,
   .no-flexbox .huge-action-buttons .announcement__titlegroup,
   .no-flexbox .huge-action-buttons .node-news.node-teaser h2 a,
   .node-news.node-teaser h2 .no-flexbox .huge-action-buttons a {
     float: left;
+  }
+}
+@media (min-width: 50em) {
+  .huge-action-buttons .button, .huge-action-buttons .button--highlight,
+  .huge-action-buttons .announcement__titlegroup,
+  .huge-action-buttons .node-news.node-teaser h2 a,
+  .node-news.node-teaser h2 .huge-action-buttons a {
+    font-size: 58px;
   }
 }
 .huge-action-buttons .button span, .huge-action-buttons .button--highlight span,
@@ -1118,16 +1137,24 @@ input#edit-submit {
   overflow: hidden;
   color: #C9C9C9;
 }
+.announcement + .announcement {
+  margin-top: 1em;
+}
+.announcement__image {
+  display: block;
+  overflow: hidden;
+  padding-right: 1em;
+  float: left;
+}
+.announcement__image img {
+  max-width: 150px;
+  display: block;
+}
 .announcement__day {
   margin-bottom: .5em;
   font-style: italic;
 }
-.announcement__image {
-  width: 100%;
-  padding-right: 1em;
-}
-.announcement__image img {
-  max-width: 100%;
+.announcement__titlegroup {
   display: block;
 }
 .announcement__titlegroup * {
